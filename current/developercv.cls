@@ -10,6 +10,7 @@
 % Jan Vorisek (jan@vorisek.me)
 % Based on a template by Jan Küster (info@jankuester.com)
 % Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+% Downloaded by Eleanor Nicolson on 09/07/2019, thereafter modified.
 %
 % License:
 % The MIT License (see included LICENSE file)
