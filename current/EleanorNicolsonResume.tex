@@ -22,6 +22,8 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage[backend=biber,style=reading]{biblatex}
+\addbibresource{publications.bib}
 
 \newcommand{\grinnell}{\link{https://www.grinnell.edu/about-grinnell/grinnell-glance}{Grinnell College}}
 \newcommand{\ucl}{\link{https://www.ucl.ac.uk/}{University College London}}
@@ -40,7 +42,6 @@
 %----------------------------------------------------------------------------------------
 
 \input{TitleAndContact}
-
 \vspace{0.5cm}
 
 %----------------------------------------------------------------------------------------
@@ -73,6 +74,12 @@
 \input{ResearchExperience}
 
 \input{MiscellaneousExperience}
+
+\cvsect{Publication}
+
+\nocite{*}
+
+\printbibliography
 
 %----------------------------------------------------------------------------------------
 
