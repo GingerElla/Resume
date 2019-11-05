@@ -10,6 +10,7 @@
 % Jan Vorisek (jan@vorisek.me)
 % Based on a template by Jan Küster (info@jankuester.com)
 % Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+% Downloaded by Eleanor Nicolson on 09/07/2019, thereafter modified.
 %
 % License:
 % The MIT License (see included LICENSE file)
@@ -80,11 +81,11 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage[default]{raleway}
+%usepackage[default]{raleway}
 %\usepackage[defaultsans]{droidsans}
 %\usepackage{cmbright}
 %\usepackage{fetamont}
-%\usepackage[default]{gillius}
+\usepackage[default]{gillius}% removes warnings about text bullets
 %\usepackage{roboto}
 
 \renewcommand*\familydefault{\sfdefault} % Force the sans-serif version of any font used
