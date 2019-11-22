@@ -189,18 +189,18 @@
 
 % Command to output section title headings
 \newcommand{\cvsect}[1]{% The only parameter is the section text
-	\vspace{\baselineskip} % Whitespace before the section title
+	%\vspace{\baselineskip} % Whitespace before the section title
 	\colorbox{theme-color}{\textcolor{white}{\MakeUppercase{\textbf{#1}}}}% Section title
 	\vspace{\baselineskip} % Whitespace after the section title
 }
 
 \newcommand{\divider}[1]{% The only parameter is the divider text
-	\tcbset{width=\textwidth,boxrule=0pt,colback=theme-color,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
-	\vspace{\baselineskip} % Whitespace before the divider
+	\tcbset{width=\textwidth,boxrule=0pt,colback=theme-color,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=0pt}
+	%\vspace{\baselineskip} % Whitespace before the divider
 	\begin{tcolorbox}
 	\centering\textcolor{white}{\MakeUppercase{\textbf{#1}}}
 	\end{tcolorbox}
-	\vspace{\baselineskip} % Whitespace after divider
+	%\vspace{\baselineskip} % Whitespace after divider
 }
 
 %----------------------------------------------------------------------------------------
