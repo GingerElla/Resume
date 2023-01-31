@@ -95,7 +95,7 @@
 
 %------------------------------------------------
 
-\usepackage{fontawesome} % Required for FontAwesome icons
+\usepackage{fontawesome5} % Required for FontAwesome icons
 
 % Command to output an icon in a black square box with text to the right
 \newcommand{\icon}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
@@ -229,6 +229,16 @@
 		\hfill% Horizontal whitespace
 		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
 		#4 % Entry description text
+	}\\\\}
+	
+\newcommand{\smallentry}[3]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier
+	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
+		{\footnotesize #1} % Leftmost entry date(s) text
+	}%
+	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
+		\textbf{#2}% Entry heading text
+		\hfill% Horizontal whitespace
+		{\footnotesize \textbf{\textcolor{black}{#3}}}% Right-aligned entry qualifier text
 	}\\\\}
 
 % Command to output a separator slash between lists, e.g. '  /  '
