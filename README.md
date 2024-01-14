@@ -9,6 +9,3 @@ Both templates were originally sourced from [LaTeXTemplates.com](http://www.LaTe
 ## View
 
 [Download.](current/EleanorNicolsonResume.pdf)
-
-<iframe src="current/EleanorNicolsonResume.pdf" width="100%" height="1000px">
-</iframe>
