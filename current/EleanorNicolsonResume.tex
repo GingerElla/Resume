@@ -17,38 +17,42 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
-\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+% Default font size, values from 8-12pt are recommended
+\documentclass[9pt]{developercv} 
 \usepackage[backend=biber,style=reading]{biblatex}
+
 \addbibresource{publications.bib}
 
 \newcommand{\grinnell}{\link{https://www.grinnell.edu/about-grinnell/grinnell-glance}{Grinnell College}}
 \newcommand{\ucl}{\link{https://www.ucl.ac.uk/}{University College London}}
 \newcommand{\berkeley}{\link{https://www.berkeley.edu/about}{University of California, Berkeley}}
 
+\newcommand{\applied}{\link{https://www.appliedintuition.com/}{Applied Intuition}}
 \newcommand{\asstauto}{\link{https://assistant.google.com/platforms/cars}{Assistant on Auto}}
 \newcommand{\google}{\link{https://assistant.google.com}{Google}}
 \newcommand{\atoz}{\link{https://amazon.jobs/en/teams/lab126}{Amazon Lab126}}
 \newcommand{\alexaauto}{\link{https://www.amazon.com/alexa-auto}{Alexa Auto}}
 \newcommand{\avs}{\link{https://developer.amazon.com/en-US/alexa/alexa-voice-service}{Alexa Voice Services}}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	TITLE AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \input{TitleAndContact}
-\vspace{\baselineskip}
+% Add back for slightly nicer and more spacing
+% \vspace{\baselineskip}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	SECTIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \input{Objective}
 
 \vspace{\baselineskip}
@@ -78,6 +82,6 @@
 
 \printbibliography[heading=none]
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \end{document}
