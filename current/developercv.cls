@@ -183,13 +183,40 @@
 	\node[label=#4] at (#1,0.7) {}; % Label
 }
 
+% Command to output a row of five dots, the first #1 of which are filled
+\newcommand{\dotrating}[1]{%
+	\foreach \i in {1,...,5}{%
+		\ifnum\i>#1\relax
+			\tikz[baseline=-0.55ex]{\draw[theme-color, line width=0.4pt] (0,0) circle (1.5pt);}%
+		\else
+			\tikz[baseline=-0.55ex]{\fill[theme-color] (0,0) circle (1.5pt);}%
+		\fi
+		\kern2pt%
+	}%
+}
+
+% Command to output a single pie filled to #1 fifths
+\newcommand{\pierating}[1]{%
+	\begin{tikzpicture}[baseline=-0.7ex]
+		\pgfmathsetmacro\ang{#1/5*360}%
+		\fill[theme-color] (0,0) -- (90:3.6pt) arc (90:90-\ang:3.6pt) -- cycle;%
+		\draw[theme-color, line width=0.4pt] (0,0) circle (3.6pt);%
+	\end{tikzpicture}%
+}
+
+% Command for a labelled five-dot skill rating with dots aligned to the right: \dotskill{Label}{n}
+\newcommand{\skillrating}{\dotrating}% swap to \pierating to preview the pie style
+\newcommand{\dotskill}[2]{\makebox[\linewidth][l]{{\small\textbf{#1}}\hfill\skillrating{#2}}\par\vspace{2pt}}
+
 %-------------------------------------------------------------------------------
 %	CUSTOM SECTIONS & DIVIDERS
 %-------------------------------------------------------------------------------
 
 % Command to output section title headings
+\newlength{\cvsectskip} % Uniform whitespace above every section heading
+\setlength{\cvsectskip}{0.6\baselineskip}
 \newcommand{\cvsect}[1]{% The only parameter is the section text
-	%\vspace{\baselineskip} % Whitespace before the section title
+	\vspace{\cvsectskip} % Uniform whitespace before the section title
 	\colorbox{theme-color}{\textcolor{white}{\MakeUppercase{\textbf{#1}}}}% Section title
 	\vspace{\baselineskip} % Whitespace after the section title
 }
@@ -218,19 +245,26 @@
 	\begin{longtable}[H]{l l}
 }{
 	\end{longtable}
+	\vspace{-\entryskip}% Cancel the trailing gap after the last entry so section spacing stays uniform
 }
 
-\newcommand{\entry}[4]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier and the fourth is for the entry description
+\newlength{\entryskip} % Tunable vertical gap between entries
+\setlength{\entryskip}{2mm}
+
+% Optional first argument is the role (appended to the heading); then date, heading, right-aligned qualifier, and description
+\newcommand{\entry}[5][]{%
 	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
-		{\footnotesize #1} % Leftmost entry date(s) text
+		{\footnotesize #2} % Leftmost entry date(s) text
 	}%
 	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
-		\textbf{#2}% Entry heading text
+		\textbf{#3}% Entry heading (team) text
+		\def\cventryrole{#1}\ifx\cventryrole\empty\else, \textbf{#1}.\fi% Optional role at the end of the heading
 		\hfill% Horizontal whitespace
-		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
-		#4 % Entry description text
-	}\\\\}
-	
+		{\footnotesize \textbf{\textcolor{black}{#4}}}\\% Right-aligned entry qualifier text
+		#5 % Entry description text
+		\par\vspace{\entryskip}% Tunable gap below the entry
+	}\\}
+
 \newcommand{\smallentry}[3]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier
 	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
 		{\footnotesize #1} % Leftmost entry date(s) text
