@@ -1,55 +1,37 @@
 %-------------------------------------------------------------------------------
 %	INTRODUCTION, SKILLS AND TECHNOLOGIES
 %-------------------------------------------------------------------------------
+%
+% Layout note: three columns, grouped by category (programming languages /
+% platforms / tools & query languages). Within each column, entries are ordered
+% by proficiency (highest first), with ties broken alphabetically. If more space
+% is ever needed, or a fourth category emerges, this can expand to four columns --
+% drop \skillcol width to ~0.235\textwidth and add a fourth \skillcol; labels
+% still fit and it reclaims ~2 rows of height.
+%
+%-------------------------------------------------------------------------------
 
 \cvsect{Languages, Platforms, \& Tools}
 
-\begin{minipage}[t]{0.45\textwidth}
- 	% Required for vertically aligning minipages
-	\vspace{-\baselineskip}
-	\begin{barchart}{5.5}
-		\baritem{Java}{40}
-		\baritem{Kotlin}{60}
-		\baritem{Python}{90}
-	\end{barchart}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.5\textwidth}
-	% Required for vertically aligning minipages
-	\vspace{-\baselineskip}
-	\begin{barchart}{5.5}
-		\baritem{Scala}{20}
-		\baritem{\LaTeX}{50}
-		\baritem{Android}{30}
-	\end{barchart}
-\end{minipage}
+\newcommand{\skillcol}[1]{\begin{minipage}[t]{0.31\textwidth}#1\end{minipage}}
 
-%\begin{minipage}[t]{0.35\textwidth} % 50% of the page for the skills bar chart
-%	\vspace{-\baselineskip} % Required for vertically aligning minipages
-%	\begin{barchart}{5.5}
-%		\baritem{Java}{60}
-%		\baritem{Kotlin}{60}
-%		\baritem{\LaTeX}{70}
-%		% \baritem{Processing}{30}
-%		\baritem{Python}{55}
-%		\baritem{Scala}{40}
-% \baritem{Scheme}{20}
-%	\end{barchart}
-%\end{minipage}
-%\hfill
-%\begin{minipage}[t]{0.6\textwidth}
-%	\vspace{-\baselineskip} % Required for vertically aligning minipages
-%	\bubbles{
-%	3/Android,
-%	5/Git, 
-%	6/IntellliJ, 
-%	5/Markdown, 
-%	4/MS Office, 
-%	6/PyCharm
-%	}
-%\end{minipage}
-
-%\begin{center}
-%	% scale is roughly 1-6
-%	\bubbles{4/AWS, 5/Git, 6/IntellliJ, 5/Markdown, 4/MS Office, 6/PyCharm}
-%\end{center}
+\skillcol{
+	\dotskill{Python}{5}
+	\dotskill{Kotlin}{4}
+	\dotskill{Java}{3}
+	\dotskill{Scala}{3}
+}\hfill
+\skillcol{
+	\dotskill{Buildkite}{5}
+	\dotskill{AWS Platform}{4}
+	\dotskill{Graph Databases}{4}
+	\dotskill{Docker}{3}
+	\dotskill{Terraform}{3}
+}\hfill
+\skillcol{
+	\dotskill{Agentic Workflows}{5}
+	\dotskill{Git}{4}
+	\dotskill{Gremlin}{4}
+	\dotskill{SQL}{4}
+	\dotskill{Android}{3}
+}
